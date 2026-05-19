@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Clínica Veterinária Vila Virgínia | Dr. Cláudio · Cuidado que transforma</title>
+<!-- Google Fonts (Inter + Playfair Display) -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(145deg, #fefaf0 0%, #f8f5ec 100%);
+    color: #1d2c28;
+    scroll-behavior: smooth;
+    }
+
+    .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+    }
+
+    /* Glassmorphism header */
+    .header-glass {
+    background: rgba(255, 252, 242, 0.92);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(90, 110, 80, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    }
+
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 18px 0;
+    gap: 20px;
+    }
+
+    .logo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #1f6e43, #2b8c5a);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: -0.3px;
+    }
+
+    .logo p {
+    font-size: 0.8rem;
+    color: #5c6e5a;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    }
+
+    .nav-links {
+    display: flex;
+    gap: 36px;
+    align-items: center;
+    flex-wrap: wrap;
+    }
+
+    .nav-links a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #2c4b3e;
+    transition: 0.2s;
+    font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+    color: #1f6e43;
+    transform: translateY(-1px);
+    }
+
+    .btn-whatsapp-nav {
+    background: #25d366;
+    color: white;
+    padding: 8px 22px;
+    border-radius: 40px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 8px rgba(37, 211, 102, 0.2);
+    transition: 0.2s;
+    }
+
+    .btn-whatsapp-nav:hover {
+    background: #20b859;
+    transform: scale(1.02);
+    color: white;
+    }
+
+    /* Hero refinado */
+    .hero {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 60px 0 70px 0;
+    }
+
+    .hero-content {
+    flex: 1.2;
+    }
+
+    .hero-badge {
+    background: #e2f0e6;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 20px;
+    border-radius: 60px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1c6e44;
+    margin-bottom: 24px;
+    backdrop-filter: blur(2px);
+    }
+
+    .hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1a332a;
+    margin-bottom: 20px;
+    }
+
+    .hero-highlight {
+    color: #1f8a53;
+    border-bottom: 2px dotted #bdd6c2;
+    }
+
+    .hero-content p {
+    font-size: 1.1rem;
+    color: #446658;
+    margin-bottom: 28px;
+    max-width: 550px;
+    line-height: 1.5;
+    }
+
+    .rating-modern {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+    background: rgba(255,255,245,0.7);
+    padding: 10px 18px;
+    border-radius: 80px;
+    width: fit-content;
+    backdrop-filter: blur(4px);
+    }
+
+    .stars {
+    color: #f4b942;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    }
+
+    .rating-modern span {
+    font-weight: 600;
+    color: #3a5e4f;
+    }
+
+    .hero-buttons {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    }
+
+    .btn-primary {
+    background: #1f6e43;
+    color: white;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.25s;
+    box-shadow: 0 8px 18px rgba(31,110,67,0.2);
+    }
+
+    .btn-primary:hover {
+    background: #0f5839;
+    transform: translateY(-3px);
+    box-shadow: 0 14px 25px rgba(31,110,67,0.25);
+    }
+
+    .btn-outline {
+    background: transparent;
+    border: 1.5px solid #2c7a51;
+    color: #2c7a51;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    }
+
+    .btn-outline:hover {
+    background: #eef5ea;
+    border-color: #1f6e43;
+    transform: translateY(-2px);
+    }
+
+    .hero-image {
+    flex: 0.9;
+    background: linear-gradient(135deg, #e9f0e3, #dde6d4);
+    border-radius: 48px;
+    padding: 32px 20px;
+    text-align: center;
+    box-shadow: 0 30px 40px -20px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    }
+
+    .hero-image i {
+    font-size: 7rem;
+    color: #2c7a51;
+    margin: 0 6px;
+    filter: drop-shadow(0 8px 12px rgba(0,0,0,0.1));
+    }
+
+    /* Features cards refinados */
+    .features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    justify-content: center;
+    margin: 80px 0;
+    }
+
+    .feature-card {
+    background: white;
+    padding: 32px 24px;
+    border-radius: 36px;
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    transition: all 0.25s ease;
+    border: 1px solid #e6eada;
+    box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.06);
+    }
+
+    .feature-card:hover {
+    transform: translateY(-8px);
+    border-color: #cde0ce;
+    box-shadow: 0 25px 35px -18px rgba(31,110,67,0.15);
+    }
+
+    .feature-card i {
+    font-size: 2.6rem;
+    background: linear-gradient(145deg, #1f6e43, #3e9c6b);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: #234d3c;
+    }
+
+    /* Seção serviços */
+    .services {
+    background: #ffffffcc;
+    border-radius: 64px;
+    padding: 60px 0;
+    margin: 50px 0;
+    backdrop-filter: blur(2px);
+    }
+
+    .section-title {
+    font-size: 2.4rem;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    margin-bottom: 56px;
+    color: #1f4d3a;
+    font-weight: 600;
+    }
+
+    .services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+    }
+
+    .service-item {
+    background: #fefcf5;
+    border-radius: 32px;
+    padding: 28px;
+    width: 230px;
+    text-align: center;
+    transition: 0.2s;
+    border: 1px solid #ede9dd;
+    }
+
+    .service-item i {
+    font-size: 2.5rem;
+    color: #2c7a51;
+    margin-bottom: 16px;
+    }
+
+    /* Depoimentos mais elegantes */
+    .testimonial-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    }
+
+    .testimonial-card {
+    background: white;
+    border-radius: 40px;
+    padding: 32px;
+    max-width: 360px;
+    box-shadow: 0 20px 35px -12px rgba(0,0,0,0.05);
+    transition: 0.2s;
+    border: 1px solid #ece6d8;
+    }
+
+    .testimonial-card:hover {
+    transform: scale(1.01);
+    border-color: #cbdcc2;
+    }
+
+    .testimonial-card i.fa-quote-left {
+    color: #bdd0b0;
+    font-size: 2rem;
+    }
+
+    .client-name {
+    font-weight: 700;
+    margin-top: 16px;
+    color: #1f6e43;
+    }
+
+    /* Contato e mapa melhorado */
+    .info-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 70px 0;
+    }
+
+    .info-card {
+    flex: 1;
+    background: #ffffffdb;
+    backdrop-filter: blur(4px);
+    padding: 36px;
+    border-radius: 48px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+    border: 1px solid #e7e2d4;
+    }
+
+    .info-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+    font-weight: 600;
+    }
+
+    .info-detail {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 24px 0;
+    }
+
+    .map-modern {
+    background: #dde3d4;
+    border-radius: 32px;
+    padding: 30px;
+    text-align: center;
+    margin-top: 28px;
+    }
+
+    .cta-footer {
+    background: #1f6e43;
+    border-radius: 48px;
+    padding: 35px;
+    text-align: center;
+    color: white;
+    margin: 50px 0 30px;
+    }
+
+    footer {
+    text-align: center;
+    padding: 40px 0 30px;
+    border-top: 1px solid #dcd6c4;
+    margin-top: 20px;
+    }
+
+    @media (max-width: 800px) {
+    .container {
+        padding: 0 20px;
+    }
+    .hero-content h1 {
+        font-size: 2.3rem;
+    }
+    .section-title {
+        font-size: 1.9rem;
+    }
+    .navbar {
+        flex-direction: column;
+    }
+    }
+</style>
+</head>
+<body>
+
+<div class="header-glass">
+<div class="container">
+    <div class="navbar">
+    <div class="logo">
+        <h1>🏵️ Clínica Vila Virgínia</h1>
+        <p>Dr. Cláudio & equipe · Cuidado que vira amizade</p>
+    </div>
+    <div class="nav-links">
+        <a href="#">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#contato">Contato</a>
+        <a href="https://wa.me/551636211929?text=Olá%20Dr.%20Cláudio,%20quero%20marcar%20uma%20consulta%20para%20meu%20pet!" class="btn-whatsapp-nav" target="_blank"><i class="fab fa-whatsapp"></i> Fale conosco</a>
+    </div>
+    </div>
+</div>
+</div>
+
+<main class="container">
+<!-- Hero -->
+<div class="hero">
+    <div class="hero-content">
+    <div class="hero-badge"><i class="fas fa-paw"></i> +150 avaliações 4,9 ★</div>
+    <h1>Onde o tratamento é <span class="hero-highlight">com alma</span> de veterinário</h1>
+    <p>Dr. Cláudio, referência em Ribeirão Preto, atende com excelência, respeito e amor incondicional. Seu pet merece o melhor.</p>
+    <div class="rating-modern">
+        <div class="stars">★★★★½</div>
+        <span>4,9 · baseado em 154 opiniões reais</span>
+    </div>
+    <div class="hero-buttons">
+        <a href="tel:+551636211929" class="btn-primary"><i class="fas fa-phone-alt"></i> (16) 3621-1929</a>
+        <!-- Link do Google Maps oficial da clínica -->
+        <a href="https://www.google.com/maps/place/Cl%C3%ADnica+Veterin%C3%A1ria+Vila+Virg%C3%ADnia/@-21.1867877,-47.8441157,15z/data=!4m10!1m2!2m1!1sveterin%C3%A1rio+ribeir%C3%A3o+preto!3m6!1s0x94b9be92fa759267:0x326ea6c6908ac007!8m2!3d-21.1867877!4d-47.8250613!15sChx2ZXRlcmluw6FyaW8gcmliZWlyw6NvIHByZXRvWh4iHHZldGVyaW7DoXJpbyByaWJlaXLDo28gcHJldG-SAQx2ZXRlcmluYXJpYW6aAURDaTlEUVVsUlFVTnZaRU5vZEhsalJqbHZUMjVTYVZreVpGUlRiVTQyVlRKRmQyRnFUbXRSYXpsV1kwVlplVk51WXhBQuABAPoBBAgAEDI!16s%2Fg%2F11bzwm0t70?entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D" class="btn-outline" target="_blank"><i class="fas fa-map-marker-alt"></i> Como chegar</a>
+    </div>
+    </div>
+    <div class="hero-image">
+    <i class="fas fa-dog"></i>
+    <i class="fas fa-cat"></i>
+    <p style="margin-top: 20px; font-weight: 500;">🐾 "Trata como se fosse da família"</p>
+    <small style="opacity: 0.7;">Dr. Cláudio e equipe apaixonados</small>
+    </div>
+</div>
+
+<!-- Cards de vantagens -->
+<div class="features">
+    <div class="feature-card"><i class="fas fa-heart"></i><h3>Amor e Respeito</h3><p>Atendimento humanizado, com paciência e empatia.</p></div>
+    <div class="feature-card"><i class="fas fa-microscope"></i><h3>Alta Competência</h3><p>Dr. Cláudio é referência em clínica médica de pequenos animais.</p></div>
+    <div class="feature-card"><i class="fas fa-clock"></i><h3>Horários Flexíveis</h3><p>Agende consultas e emergências com facilidade.</p></div>
+</div>
+
+<!-- Seção serviços -->
+<div class="services" id="servicos">
+    <div class="section-title">💚 O que oferecemos</div>
+    <div class="services-grid">
+    <div class="service-item"><i class="fas fa-stethoscope"></i><h4>Consultas clínicas</h4><p>Avaliação completa e preventiva.</p></div>
+    <div class="service-item"><i class="fas fa-syringe"></i><h4>Vacinação</h4><p>Calendário atualizado, segurança total.</p></div>
+    <div class="service-item"><i class="fas fa-cut"></i><h4>Banho e Tosa</h4><p>Higiene e bem-estar com carinho.</p></div>
+    <div class="service-item"><i class="fas fa-bone"></i><h4>Nutrição</h4><p>Orientação alimentar personalizada.</p></div>
+    </div>
+</div>
+
+<!-- Depoimentos reais (adaptados) -->
+<div id="depoimentos">
+    <div class="section-title">🐕 O que nossos clientes falam</div>
+    <div class="testimonial-grid">
+    <div class="testimonial-card">
+        <i class="fas fa-quote-left"></i>
+        <p style="margin: 16px 0;">“Nunca encontrei um profissional tão atencioso como o Dr. Cláudio! Muito humano, ama o que faz. Cuida do meu Bóbi como ninguém.”</p>
+        <div class="client-name">— Valeria Bergamasco</div>
+        <div style="color:#f5b042;">★★★★★</div>
+    </div>
+    <div class="testimonial-card">
+        <i class="fas fa-quote-left"></i>
+        <p style="margin: 16px 0;">“Dr. Cláudio é o veterinário mais competente de Ribeirão Preto. Conhecimento incrível, respeito e muitos anos de confiança.”</p>
+        <div class="client-name">— Diego B. Meli</div>
+        <div style="color:#f5b042;">★★★★★</div>
+    </div>
+    <div class="testimonial-card">
+        <i class="fas fa-quote-left"></i>
+        <p style="margin: 16px 0;">“Não conheço clínica mais humana. Dr. Cláudio trata os pets como filhos de patas. Recomendo sem pensar duas vezes!”</p>
+        <div class="client-name">— Fabiano Floriano</div>
+        <div style="color:#f5b042;">★★★★★</div>
+    </div>
+    </div>
+</div>
+
+<!-- Contato + Mapa -->
+<div class="info-section" id="contato">
+    <div class="info-card">
+    <h3><i class="fas fa-location-dot"></i> Nossa Casa</h3>
+    <div class="info-detail"><i class="fas fa-road"></i> R. Abílio Sampaio, 562 - Vila Virginia, Ribeirão Preto - SP, 14030-420</div>
+    <div class="info-detail"><i class="fas fa-phone"></i> (16) 3621-1929</div>
+    <div class="info-detail"><i class="fab fa-whatsapp"></i> (16) 3621-1929 (atende 24h)</div>
+    <div class="map-modern">
+        <i class="fas fa-map-marked-alt" style="font-size: 2.8rem; color:#1f6e43;"></i>
+        <p style="margin: 12px 0;">📍 Localização exata no mapa</p>
+        <!-- Link oficial do Google Maps para a clínica -->
+        <a href="https://www.google.com/maps/place/Cl%C3%ADnica+Veterin%C3%A1ria+Vila+Virg%C3%ADnia/@-21.1867877,-47.8441157,15z/data=!4m10!1m2!2m1!1sveterin%C3%A1rio+ribeir%C3%A3o+preto!3m6!1s0x94b9be92fa759267:0x326ea6c6908ac007!8m2!3d-21.1867877!4d-47.8250613!15sChx2ZXRlcmluw6FyaW8gcmliZWlyw6NvIHByZXRvWh4iHHZldGVyaW7DoXJpbyByaWJlaXLDo28gcHJldG-SAQx2ZXRlcmluYXJpYW6aAURDaTlEUVVsUlFVTnZaRU5vZEhsalJqbHZUMjVTYVZreVpGUlRiVTQyVlRKRmQyRnFUbXRSYXpsV1kwVlplVk51WXhBQuABAPoBBAgAEDI!16s%2Fg%2F11bzwm0t70?entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="color: #1f6e43; font-weight: 600;">Ver no Google Maps →</a>
+    </div>
+    </div>
+    <div class="info-card">
+    <h3><i class="fas fa-calendar-week"></i> Horários</h3>
+    <div style="background: #FAF7EF; border-radius: 28px; padding: 20px;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 12px;"><span>Segunda a Sexta</span><span>08:00 – 18:00</span></div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 12px;"><span>Sábado</span><span>08:00 – 12:00</span></div>
+        <div style="display: flex; justify-content: space-between;"><span>Domingo / Feriados</span><span>Fechado</span></div>
+    </div>
+    <div class="status-badge" style="margin-top: 25px; background:#E9F0E4; padding: 8px 16px; border-radius: 60px; display: inline-block;">
+        <i class="fas fa-info-circle"></i> <span id="statusText">Verificando horário...</span>
+    </div>
+    <div style="margin-top: 30px;">
+        <i class="fas fa-trophy"></i> <strong>Dr. Cláudio:</strong> Mais de 15 anos de experiência e ❤️ infinito.
+    </div>
+    </div>
+</div>
+
+<!-- Call to action final -->
+<div class="cta-footer">
+    <h2 style="font-weight: 600; margin-bottom: 12px;">Seu pet merece um cuidado único</h2>
+    <p style="margin-bottom: 24px;">Agende uma consulta e leve o melhor para quem você mais ama.</p>
+    <a href="https://wa.me/551636211929?text=Quero%20agendar%20uma%20consulta%20para%20meu%20pet!" target="_blank" style="background: white; color: #1f6e43; padding: 14px 32px; border-radius: 60px; text-decoration: none; font-weight: 700; display: inline-flex; gap: 8px;"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</a>
+</div>
+</main>
+
+<footer>
+<div class="container">
+    <p>🐾 Clínica Veterinária Vila Virgínia | Dr. Cláudio CNPJ: 00.000.000/0001-00</p>
+    <p style="margin-top: 8px;">© 2025 · Amor que cura, mãos que acolhem. Ribeirão Preto - SP</p>
+</div>
+</footer>
+
+<script>
+function atualizarStatus() {
+    const agora = new Date();
+    const diaSemana = agora.getDay();
+    const hora = agora.getHours();
+    let aberto = false;
+    if (diaSemana >= 1 && diaSemana <= 5 && hora >= 8 && hora < 18) aberto = true;
+    if (diaSemana === 6 && hora >= 8 && hora < 12) aberto = true;
+    const span = document.getElementById('statusText');
+    if (span) {
+    if (aberto) {
+        span.innerHTML = '🟢 Aberto agora · atendendo com carinho';
+    } else {
+        span.innerHTML = '🔴 Fechado no momento · abre amanhã às 8h';
+    }
+    }
+}
+atualizarStatus();
+setInterval(atualizarStatus, 60000);
+</script>
+</body>
+</html>
